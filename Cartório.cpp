@@ -108,87 +108,93 @@ int deletar() //Função Responsável por Deletar Usuarios do Sistema
 	
 }
 
-int teste()
-{
-    printf("Fucionou a função Pedro!");
-    system("pause");
-}
-
-
 int main()
 {
 	int opcao=0; //Definindo Variáveis
 	int laco=1;
+	char senhadigitada[10]="a";
+	int comparacao;
 	
-	for(laco=1;laco=1;)
+  	printf("### Cartório da EBAC ###\n\n");
+	printf("Login de administrador\n\n Digite sua senha: ");
+	scanf("%s",senhadigitada);
+	
+	comparacao = strcmp(senhadigitada, "admin");
+	
+	if(comparacao == 0)
 	{
+        system ("cls");
+    	for(laco=1;laco=1;)
+    	{
 	
-    	system("cls");
+        	system("cls");
 	
-    	setlocale(LC_ALL, "Portuguese");  //Definindo a linguagem
+        	setlocale(LC_ALL, "Portuguese");  //Definindo a linguagem
 	
-        printf("### Cartório da EBAC ###\n\n"); //Inicio do menu
-        printf("Escolha a opção desejada do menu:\n\n");
-        printf("\t1 - Registrar nomes\n");
-        printf("\t2 - Consultar nomes\n");
-        printf("\t3 - Deletar nomes\n\n");
-        printf("\t4 - Sair do Sistema\n\n")
-        printf("Esse Softare é de livre uso dos alunos\n"); //Fim do Menu
-        printf("Opção:");
-        scanf("%d", &opcao); //Armazenando a Escolha do Usuário
+            printf("### Cartório da EBAC ###\n\n"); //Inicio do menu
+            printf("Escolha a opção desejada do menu:\n\n");
+            printf("\t1 - Registrar nomes\n");
+            printf("\t2 - Consultar nomes\n");
+            printf("\t3 - Deletar nomes\n\n");
+            printf("\t4 - Sair do Sistema\n\n");
+            printf("Esse Softare é de livre uso dos alunos\n"); //Fim do Menu
+            printf("Opção:");
+            scanf("%d", &opcao); //Armazenando a Escolha do Usuário
     
-        system("cls");
+            system("cls");
         
-        switch(opcao)
-        {
-        	case 1: 
-        	registro();
-        	break;
+            switch(opcao)
+            {
+             	case 1: 
+            	registro();
+            	break;
         	
-        	case 2:
-            consulta();
-    	    break;
+            	case 2:
+                consulta();
+    	        break;
     	    
-    	    case 3:
-    	    deletar();
-			break;
+    	        case 3:
+    	        deletar();
+		    	break;
 			
-			case 4:
-			printf("Obrigado por utilizar o sitema!\n");
-			return 0;
-			break; 
+    			case 4:
+		    	printf("Obrigado por utilizar o sitema!\n");
+    			return 0;
+    			break; 
 			
-			default:
-			printf("Essa opção não está disponível!\n");
-        	system("pause");
-			break;	
-		}
+    			default:
+    			printf("Essa opção não está disponível!\n");
+            	system("pause");
+     			break;	
+	        }
+	    	
+                if(opcao==1) //Início da Seleção
+                {
+            	printf("Você escolheu o resgistro de nomes!\n");
+             	system("pause");
+            	}
+               if(opcao==2) 
+                {
+            	printf("você escolheu consultar os nomes!\n");
+    	        system("pause");
+            	}
+            	if(opcao==3) 
+                {
+            	printf("Você escolheu deletar os nomes!\n");
+            	system("pause");
+            	}
+            	if(opcao>=4 || opcao<=0) 
+                {
+            	printf("Essa opção não está disponível!\n");
+            	system("pause");
+             	} // Fim da Seleção
+        }
     
-        if(opcao==1) //Início da Seleção
-        {
-    	printf("Você escolheu o resgistro de nomes!\n");
-    	system("pause");
-    	}
-        if(opcao==2) 
-        {
-    	printf("você escolheu consultar os nomes!\n");
-    	system("pause");
-    	}
-    	if(opcao==3) 
-        {
-    	printf("Você escolheu deletar os nomes!\n");
-    	system("pause");
-    	}
-    	if(opcao>=4 || opcao<=0) 
-        {
-    	printf("Essa opção não está disponível!\n");
-    	system("pause");
-    	} // Fim da Seleção
-    }
-
-
-
- 
 	}
+     
+     else
+     printf("Senha incorreta!");
+     
+}
 	
 	
